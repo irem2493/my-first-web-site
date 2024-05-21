@@ -13,38 +13,9 @@
          <link rel="stylesheet" href="style.css" />
         <title>WEB1 - JavaScript</title>
         <meta charset="utf-8">
-        <script>
-            /*코딩을 잘하는 방법 : 중복 제거*/
-            function nightDayHandler(self){
-                var target=document.querySelector('body');
-        var alist = document.querySelectorAll('a');
-        
-            if(self.value ==='night'){
-                target.style.backgroundColor='black';
-                target.style.color='white';
-               self.value ='day';
-                
-               var i = 0;
-                while(i<alist.length){
-                    console.log(alist[i]);
-                    alist[i].style.color = 'powderblue';
-                    i++;
-                }
-
-            } else{
-                target.style.backgroundColor='white';
-                target.style.color='black';
-                self.value ='night';
-
-                var i = 0;
-                while(i<alist.length){
-                    console.log(alist[i]);
-                    alist[i].style.color = 'blue';
-                    i++;
-                }
-            } 
-            }
-        </script>
+        <!--jquery 라이브러리-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="colors.js"></script>
     </head>
     <body>
         <h1><a href="index.html">WEB</a></h1>
@@ -63,7 +34,6 @@
         </div>
     </div>
 
-    <input type="button" value="night" onclick="nightDayHandler(this);"> 
             <!--파일명으로 웹사이트에서 열면 안됨, 로컬호스트로 열어야 함 : 보안상 문제-->
             <p>
                 <div id="disqus_thread"></div>

@@ -5,16 +5,37 @@
         <title></title>
     </head>
     <body>
-        <h1>Function</h1>
-        <h2>Parameter & Argument</h2>
+        <h1>Object</h1>
+        <h2>Create</h2>
         <script>
-            var left = 0, right = 0;
-            function sum(left, right){
-                return left+right;
+            var coworkers = {
+                "programer" : "leesaya",
+                "designer" : "leezche"
+            };
+            document.write('programer : '+coworkers.programer+'<br>');
+            document.write('designer : '+coworkers.designer+'<br>');
+            coworkers.bookkeeper = 'duru'; 
+            document.write('bookkeeper : '+coworkers.bookkeeper+'<br>');
+            /*단어가 두개이므로 . 사용 안됨, 배열처럼 사용*/
+            coworkers["data scientist"] = 'taeho'; 
+            document.write('data scientist : '+coworkers["data scientist"]+'<br>');
+        </script>
+
+        <h2>Iterator</h2>
+        <script>
+            for (var key in coworkers) {
+                document.write(key+' : '+coworkers[key]+'<br>');
+                }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            coworkers.showAll = function(){
+                for (var key in this) {
+                document.write(key+' : '+this[key]+'<br>');
+                }
             }
-           document.write(sum(2,3)+'<br>');
-           document.write('<div style="color:red">'+sum(2,3)+'</div>');
-           document.write('<div style="font-size : 3rem">'+sum(2,3)+'</div><br>');
+
+            coworkers.showAll();
         </script>
     </body>
 </html>
